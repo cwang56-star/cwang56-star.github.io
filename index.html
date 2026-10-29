@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="王心滢 Xinying Wang — 波士顿大学商业分析硕士在读，求职方向：营销、内容与用户运营" />
+<link rel="icon" href="data:," />
+<title>王心滢 Xinying Wang — 个人网站</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff4f9e;
+    --pink-deep:#e91e7f;
+    --pink-dark:#c2186b;
+    --pink-soft:#ffd9ea;
+    --paper:#fffafc;
+    --card:#ffffff;
+    --ink:#3d1030;
+    --ink-2:#6d3a58;
+    --ink-3:#9a6b87;
+    --line:#ffd0e4;
+    --teal:#0e7c74;
+    --yellow:#ffc93d;
+    --shadow:0 14px 34px rgba(160,10,90,.28);
+    --shadow-sm:0 8px 20px rgba(160,10,90,.20);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --pink:#d6337f;
+      --pink-deep:#b81d68;
+      --pink-dark:#8f1450;
+      --paper:#fff5f9;
+      --shadow:0 14px 34px rgba(0,0,0,.4);
+      --shadow-sm:0 8px 20px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--pink-deep)}
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important} }
+  body{
+    margin:0;color:var(--ink);overflow-x:clip;
+    font-family:"Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,.35) 0 6px, transparent 7px),
+      radial-gradient(circle at 88% 12%, rgba(255,255,255,.30) 0 5px, transparent 6px),
+      radial-gradient(circle at 78% 82%, rgba(255,255,255,.28) 0 7px, transparent 8px),
+      radial-gradient(circle at 6% 78%, rgba(255,255,255,.25) 0 5px, transparent 6px),
+      radial-gradient(circle at 50% 40%, rgba(255,255,255,.22) 0 4px, transparent 5px),
+      linear-gradient(160deg, var(--pink) 0%, var(--pink-deep) 100%);
+    min-height:100vh;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+  /* ===== Cute background decoration layer (behind everything, non-interactive) ===== */
+  .bg-decor{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .bg-dots{position:absolute;inset:0;opacity:.55;
+    background-image:radial-gradient(circle, rgba(255,255,255,.34) 1.6px, transparent 2.2px),radial-gradient(circle, rgba(255,217,234,.5) 1.2px, transparent 1.8px);
+    background-size:36px 36px,58px 58px;background-position:0 0,18px 26px}
+  .lace{position:absolute;left:0;right:0;height:16px;opacity:.5;
+    background-image:radial-gradient(circle at 10px -4px, transparent 11px, rgba(255,255,255,.9) 12px, rgba(255,255,255,.9) 15px, transparent 16px);
+    background-size:22px 16px;background-repeat:repeat-x}
+  .lace-top{top:0}
+  .lace-bottom{bottom:0;transform:scaleY(-1)}
+  .cloud{position:absolute;background:rgba(255,255,255,.36);border-radius:999px;filter:blur(.4px)}
+  .cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
+  .cloud-tl{width:170px;height:46px;left:-34px;top:54px}
+  .cloud-tl::before{width:74px;height:74px;left:26px;top:-36px}
+  .cloud-tl::after{width:52px;height:52px;left:88px;top:-24px}
+  .cloud-tr{width:150px;height:42px;right:-30px;top:118px;background:rgba(255,255,255,.28)}
+  .cloud-tr::before{width:64px;height:64px;left:22px;top:-30px}
+  .cloud-tr::after{width:44px;height:44px;left:76px;top:-20px}
+  .cloud-bl{width:190px;height:48px;left:-44px;bottom:64px;background:rgba(255,255,255,.26)}
+  .cloud-bl::before{width:80px;height:80px;left:30px;top:-38px}
+  .cloud-bl::after{width:54px;height:54px;left:100px;top:-25px}
+  .rainbow{position:absolute;right:-64px;bottom:-72px;width:250px;height:250px;opacity:.30;transform:rotate(-8deg)}
+  .rainbow i{position:absolute;inset:0;border-radius:50%;border:13px solid transparent}
+  .rainbow i:nth-child(1){border-color:#fff0f6}
+  .rainbow i:nth-child(2){inset:15px;border-color:#ffe9a8}
+  .rainbow i:nth-child(3){inset:30px;border-color:#ffd9ea}
+  .rainbow i:nth-child(4){inset:45px;border-color:#e3d9ff}
+  .rainbow i:nth-child(5){inset:60px;border-color:#d6f2ec}
+  .deco{position:absolute;display:block;line-height:0}
+  .deco svg{width:100%;height:100%;display:block;overflow:visible}
+  .pearl{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 30%, #fff 0%, #ffeef7 38%, #ffc7e0 78%, #ffb7d6 100%);box-shadow:0 1px 4px rgba(160,10,90,.18)}
+  @keyframes drift1{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
+  @keyframes drift2{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-6px) translateX(4px)}}
+  @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.82) rotate(0deg)}50%{opacity:1;transform:scale(1.12) rotate(14deg)}}
+  @keyframes twinkle2{0%,100%{opacity:.9;transform:scale(1)}50%{opacity:.4;transform:scale(.78)}}
+  .a-drift1{animation:drift1 7.5s ease-in-out infinite}
+  .a-drift2{animation:drift2 9s ease-in-out infinite}
+  .a-twinkle{animation:twinkle 3.9s ease-in-out infinite}
+  .a-twinkle2{animation:twinkle2 4.6s ease-in-out infinite}
+  @media(max-width:860px){
+    .deco.m-hide,.pearl.m-hide{display:none}
+    .cloud-tl{width:120px;height:36px;left:-40px;top:40px}
+    .cloud-tr{display:none}
+    .cloud-bl{width:130px;height:36px;left:-46px;bottom:46px}
+    .rainbow{width:170px;height:170px;right:-56px;bottom:-62px;opacity:.24}
+    .bg-dots{background-size:30px 30px,50px 50px}
+  }
+  /* Header */
+  header.top{text-align:center;padding:44px 0 6px;color:#fff}
+  .status{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);color:var(--pink-dark);font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;box-shadow:var(--shadow-sm)}
+  .status i{width:8px;height:8px;border-radius:50%;background:#22b573;display:inline-block}
+  h1{font-size:clamp(40px,7vw,58px);margin:16px 0 0;font-weight:900;letter-spacing:.04em;line-height:1.15;text-shadow:0 3px 0 rgba(160,10,90,.25)}
+  h1 .en{font-family:"Baloo 2","Noto Sans SC",sans-serif;font-size:.52em;font-weight:800;letter-spacing:.02em;display:block;margin-top:4px;opacity:.95}
+  .tagline{margin:14px auto 0;max-width:34em;font-size:clamp(15px,2.4vw,17.5px);font-weight:500;color:#fff}
+  .tagline b{background:#fff;color:var(--pink-dark);border-radius:8px;padding:1px 8px;white-space:nowrap}
+  .hint{margin:12px 0 0;font-size:13.5px;color:rgba(255,255,255,.85)}
+  /* Stage: 2 cards | avatar | 2 cards */
+  .stage{display:grid;grid-template-columns:1fr minmax(220px,262px) 1fr;gap:22px;align-items:center;padding:26px 0 10px}
+  .col{display:flex;flex-direction:column;gap:22px;position:relative;z-index:3}
+  .tile{
+    appearance:none;text-align:left;cursor:pointer;width:100%;
+    background:var(--card);border:3px solid #fff;border-radius:26px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);
+    font:inherit;color:var(--ink);position:relative;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .tile:hover{transform:translateY(-4px) rotate(-.4deg)}
+  .tile:active{transform:scale(.98)}
+  .tile:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+  .tile .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:12px}
+  .tile .ic svg{width:27px;height:27px}
+  .tile.c1 .ic{background:#ffe3f0;color:var(--pink-deep)}
+  .tile.c2 .ic{background:#e2f4f2;color:var(--teal)}
+  .tile.c3 .ic{background:#fff3cf;color:#a86e00}
+  .tile.c4 .ic{background:#ffe9d6;color:#c2570a}
+  .tile h2{margin:0;font-size:21px;font-weight:900}
+  .tile h2 .en{font-family:"Baloo 2",sans-serif;font-size:13px;color:var(--ink-3);font-weight:700;margin-left:7px;letter-spacing:.03em}
+  .tile p{margin:7px 0 0;font-size:14px;color:var(--ink-2);line-height:1.65}
+  .tile .go{margin-top:13px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--pink-deep)}
+  .tile .go .arr{transition:transform .18s ease}
+  .tile:hover .go .arr{transform:translateX(3px)}
+  /* Avatar — full-body, 3D tilt + drag (layered transforms, one job per layer)
+     drag layer = position · tilt layer = rotateX/rotateY · float layer = idle motion */
+  .avatar-box{text-align:center;position:relative;z-index:2;perspective:950px;perspective-origin:50% 42%}
+  .avatar-drag{
+    position:relative;will-change:transform;touch-action:none;cursor:grab;
+    -webkit-tap-highlight-color:transparent;outline:none;
+  }
+  .avatar-drag:focus-visible{outline:3px solid var(--yellow);outline-offset:6px;border-radius:40px}
+  .avatar-drag.is-dragging{cursor:grabbing}
+  .avatar-tilt{transform-style:preserve-3d;will-change:transform;position:relative}
+  .avatar-float{animation:floaty 5.2s ease-in-out infinite;transform-origin:50% 88%;will-change:transform}
+  @keyframes floaty{
+    0%,100%{transform:translateY(0) rotate(-.7deg) scale(1)}
+    30%{transform:translateY(-7px) rotate(.5deg) scale(1.012)}
+    55%{transform:translateY(-3px) rotate(1deg) scale(1.006)}
+    78%{transform:translateY(-9px) rotate(-.3deg) scale(1.015)}
+  }
+  /* Soft halo in page pink so the picture's own pink melts into the page */
+  .avatar-glow{
+    position:absolute;inset:-4% -14% 2%;z-index:0;pointer-events:none;
+    background:radial-gradient(ellipse 62% 52% at 50% 46%, rgba(255,120,180,.55) 0%, rgba(255,90,165,.28) 52%, transparent 74%);
+    filter:blur(6px);
+  }
+  .avatar-figure{position:relative;z-index:1;margin:0;line-height:0}
+  .avatar-figure img{
+    display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none;
+    /* the asset itself is a cut-out (transparent ground), so she stands directly on the page's pink;
+       a soft silhouette drop-shadow is what sells the depth when she tilts */
+    filter:drop-shadow(0 12px 13px rgba(140,5,75,.20));
+  }
+  /* Ground shadow under the heels — squashes / drifts with tilt & drag */
+  .avatar-shadow{
+    position:absolute;left:40%;bottom:1.1%;width:38%;height:24px;z-index:0;pointer-events:none;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse at center, rgba(120,4,64,.5) 0%, rgba(120,4,64,.28) 48%, transparent 72%);
+    filter:blur(5px);border-radius:50%;
+  }
+  .avatar-drag.is-dragging .avatar-shadow{opacity:.75}
+  .drag-badge{
+    position:absolute;top:10px;right:2px;z-index:2;pointer-events:none;
+    background:rgba(255,255,255,.94);color:var(--pink-dark);font-size:12px;font-weight:700;line-height:1;
+    padding:7px 11px;border-radius:999px;box-shadow:var(--shadow-sm);
+  }
+  .avatar-cap{display:inline-block;margin:12px 0 0;background:rgba(255,255,255,.95);color:var(--pink-dark);font-size:13.5px;font-weight:500;padding:7px 16px;border-radius:999px;box-shadow:var(--shadow-sm);line-height:1.6;position:relative;z-index:3}
+  .avatar-cap b{background:var(--pink-soft);color:var(--pink-dark);padding:2px 10px;border-radius:999px;font-size:12.5px;margin-right:6px}
+  .avatar-hint{margin:9px auto 0;font-size:12.5px;color:rgba(255,255,255,.88);max-width:26em;line-height:1.55;position:relative;z-index:3}
+  .avatar-controls{display:flex;gap:8px;justify-content:center;margin-top:11px;flex-wrap:wrap;position:relative;z-index:3}
+  .avatar-controls button{
+    font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;
+    background:rgba(255,255,255,.92);color:var(--pink-dark);
+    border:2px solid #fff;border-radius:999px;padding:7px 14px;box-shadow:var(--shadow-sm);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .avatar-controls button:hover{background:#fff;transform:translateY(-1px)}
+  .avatar-controls button:active{transform:scale(.96)}
+  .avatar-controls button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+  @media(max-width:860px){
+    .stage{grid-template-columns:1fr;gap:18px;padding-top:20px}
+    .avatar-box{order:-1;max-width:238px;margin:0 auto;width:100%}
+    .col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .tile{padding:17px 16px 14px;border-radius:22px}
+    .tile .ic{width:44px;height:44px;border-radius:13px;margin-bottom:9px}
+    .tile .ic svg{width:23px;height:23px}
+    .tile h2{font-size:17.5px}
+    .tile h2 .en{display:none}
+    .tile p{font-size:12.5px}
+  }
+  @media(max-width:380px){ .col{grid-template-columns:1fr} }
+  footer{padding:30px 0 42px;text-align:center;color:rgba(255,255,255,.85);font-size:13.5px}
+  footer b{color:#fff}
+  /* Detail sheets (modal panels) */
+  .sheet{position:fixed;inset:0;z-index:60;display:none}
+  .sheet.open{display:block}
+  .sheet .backdrop{position:absolute;inset:0;background:rgba(74,8,46,.55);backdrop-filter:blur(3px)}
+  .sheet .panel{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:min(680px,calc(100vw - 28px));max-height:calc(100dvh - 48px);overflow-y:auto;
+    background:var(--paper);border-radius:28px;border:3px solid #fff;
+    box-shadow:0 30px 70px rgba(60,0,35,.45);padding:30px 30px 26px;
+    animation:pop .22s ease;
+  }
+  @keyframes pop{from{opacity:0;transform:translate(-50%,-47%) scale(.97)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+  @media(max-width:640px){
+    .sheet .panel{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:88dvh;border-radius:26px 26px 0 0;padding:24px 20px 30px;animation:up .22s ease}
+    @keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  }
+  .panel-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:6px}
+  .panel-head .ic{width:50px;height:50px;flex:none;border-radius:15px;display:grid;place-items:center}
+  .panel-head .ic svg{width:26px;height:26px}
+  .panel-head h2{margin:0;font-size:23px;font-weight:900;line-height:1.3}
+  .panel-head h2 .en{font-family:"Baloo 2",sans-serif;font-size:13.5px;color:var(--ink-3);display:block;font-weight:700}
+  .close-x{margin-left:auto;flex:none;width:38px;height:38px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--ink-2);font-size:17px;cursor:pointer;line-height:1}
+  .close-x:hover{background:var(--pink-soft)}
+  .panel h3.sub{font-size:16.5px;font-weight:900;margin:22px 0 4px;color:var(--pink-dark)}
+  .panel h3.sub:first-of-type{margin-top:14px}
+  .panel p{font-size:15px;color:var(--ink-2);margin:8px 0 0}
+  .panel p strong,.panel li strong{color:var(--ink)}
+  .item{padding:13px 0;border-bottom:1.5px dashed var(--line)}
+  .item:last-child{border-bottom:none}
+  .item .when{font-size:12.5px;color:var(--pink-deep);font-weight:700;letter-spacing:.03em}
+  .item h4{margin:3px 0 0;font-size:16.5px;font-weight:700}
+  .item h4 .org{color:var(--ink-3);font-weight:500;font-size:14px}
+  .item ul{margin:7px 0 0;padding-left:19px;color:var(--ink-2);font-size:14.5px}
+  .item li{margin:3px 0}
+  .item p{font-size:14.5px}
+  .fact{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1.5px dashed var(--line);font-size:14.5px}
+  .fact:last-child{border-bottom:none}
+  .fact span{color:var(--ink-3);white-space:nowrap}
+  .fact b{text-align:right;font-weight:700}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:999px;background:#ffe3f0;color:var(--pink-dark);margin-left:7px;vertical-align:2px}
+  .note{background:#fff;border:1.5px dashed var(--pink);border-radius:16px;padding:13px 16px;font-size:14px;color:var(--ink-2);margin-top:16px}
+  .note b{color:var(--pink-dark)}
+  .skill-block{margin-top:16px;background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px}
+  .skill-block h4{margin:0;font-size:15.5px}
+  .skill-block p{font-size:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+  .chip{font-size:12.5px;font-weight:700;background:#fff0f6;border:1.5px solid var(--line);color:var(--pink-dark);padding:3px 11px;border-radius:999px}
+  .contact-list{display:flex;flex-direction:column;gap:11px;margin-top:16px}
+  .contact-item{display:flex;align-items:center;gap:13px;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:13px 15px;text-decoration:none;color:var(--ink);min-width:0}
+  .contact-item:hover{border-color:var(--pink)}
+  .contact-item .ic{width:40px;height:40px;flex:none;border-radius:12px;background:#fff0f6;color:var(--pink-deep);display:grid;place-items:center}
+  .contact-item .ic svg{width:20px;height:20px}
+  .contact-item>span:nth-child(2){flex:1;min-width:0}
+  .contact-item .lab{display:block;font-size:11.5px;color:var(--ink-3);letter-spacing:.05em;font-weight:700}
+  .contact-item .val{display:block;font-weight:700;font-size:14.5px;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+  .copy-btn{margin-left:auto;flex:none;font:inherit;font-size:12.5px;font-weight:700;background:var(--pink);color:#fff;border:none;border-radius:999px;padding:7px 13px;cursor:pointer}
+  .copy-btn:hover{background:var(--pink-deep)}
+  .open-tag{margin-left:auto;flex:none;font-size:12.5px;font-weight:700;color:var(--pink-deep)}
+  .back-btn{margin-top:22px;width:100%;font:inherit;font-weight:900;font-size:15.5px;background:var(--pink);color:#fff;border:none;border-radius:999px;padding:13px;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .back-btn:hover{background:var(--pink-deep)}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:var(--ink);color:#fff;font-size:14px;font-weight:500;padding:10px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:var(--shadow)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<!-- Background decorations only: fixed, pointer-events none, behind content. Center kept sparse so the avatar stays clear. -->
+<div class="bg-decor" aria-hidden="true">
+  <div class="bg-dots"></div>
+  <div class="lace lace-top"></div>
+  <div class="lace lace-bottom"></div>
+  <div class="cloud cloud-tl"></div>
+  <div class="cloud cloud-tr"></div>
+  <div class="cloud cloud-bl"></div>
+  <div class="rainbow"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- Stars -->
+  <span class="deco a-twinkle" style="left:5.5%;top:15%;width:22px;height:22px;color:#fff3a6"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+  <span class="deco a-twinkle2" style="left:93%;top:19%;width:18px;height:18px;color:#fff;animation-delay:-1.4s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+  <span class="deco a-twinkle" style="left:13%;top:66%;width:16px;height:16px;color:#ffe9f5;animation-delay:-2.2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+  <span class="deco a-twinkle2 m-hide" style="left:86%;top:62%;width:20px;height:20px;color:#fff3a6;animation-delay:-.8s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+  <span class="deco a-twinkle m-hide" style="left:24%;top:7%;width:14px;height:14px;color:#fff;animation-delay:-3s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+  <span class="deco a-twinkle2" style="left:74%;top:5.5%;width:15px;height:15px;color:#ffe9f5;animation-delay:-1.9s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8l2.7 6.2 6.8.7-5.1 4.5 1.5 6.6L12 16.3l-5.9 3.5 1.5-6.6L2.5 8.7l6.8-.7z"/></svg></span>
+
+  <!-- Hearts -->
+  <span class="deco a-drift1" style="left:8%;top:33%;width:20px;height:20px;color:rgba(255,255,255,.92)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+  <span class="deco a-drift2" style="left:90.5%;top:35%;width:17px;height:17px;color:#ffd9ea;animation-delay:-3s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+  <span class="deco a-drift1 m-hide" style="left:17%;top:86%;width:18px;height:18px;color:#ffd9ea;animation-delay:-2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+  <span class="deco a-drift2 m-hide" style="left:81%;top:88%;width:15px;height:15px;color:rgba(255,255,255,.85);animation-delay:-5s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+  <span class="deco a-drift1" style="left:3.2%;top:50%;width:14px;height:14px;color:#ffe3f0;animation-delay:-4s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+
+  <!-- Flowers (5-petal) -->
+  <span class="deco a-drift2" style="left:4%;top:84%;width:26px;height:26px;color:#fff"><svg viewBox="0 0 48 48" fill="currentColor"><g opacity=".95"><ellipse cx="24" cy="12" rx="7" ry="10"/><ellipse cx="36" cy="21" rx="10" ry="7"/><ellipse cx="32" cy="35" rx="8" ry="9"/><ellipse cx="16" cy="35" rx="8" ry="9"/><ellipse cx="12" cy="21" rx="10" ry="7"/></g><circle cx="24" cy="24" r="5.5" fill="#ffc93d"/></svg></span>
+  <span class="deco a-drift1 m-hide" style="left:94%;top:76%;width:22px;height:22px;color:#ffe9f5;animation-delay:-1.6s"><svg viewBox="0 0 48 48" fill="currentColor"><g opacity=".95"><ellipse cx="24" cy="12" rx="7" ry="10"/><ellipse cx="36" cy="21" rx="10" ry="7"/><ellipse cx="32" cy="35" rx="8" ry="9"/><ellipse cx="16" cy="35" rx="8" ry="9"/><ellipse cx="12" cy="21" rx="10" ry="7"/></g><circle cx="24" cy="24" r="5.5" fill="#ffc93d"/></svg></span>
+  <span class="deco a-drift2 m-hide" style="left:20%;top:11%;width:19px;height:19px;color:#ffd9ea;animation-delay:-4.4s"><svg viewBox="0 0 48 48" fill="currentColor"><g opacity=".95"><ellipse cx="24" cy="12" rx="7" ry="10"/><ellipse cx="36" cy="21" rx="10" ry="7"/><ellipse cx="32" cy="35" rx="8" ry="9"/><ellipse cx="16" cy="35" rx="8" ry="9"/><ellipse cx="12" cy="21" rx="10" ry="7"/></g><circle cx="24" cy="24" r="5.5" fill="#fff3a6"/></svg></span>
+  <span class="deco a-drift1" style="left:78%;top:9%;width:20px;height:20px;color:#fff;animation-delay:-2.8s"><svg viewBox="0 0 48 48" fill="currentColor"><g opacity=".9"><ellipse cx="24" cy="12" rx="7" ry="10"/><ellipse cx="36" cy="21" rx="10" ry="7"/><ellipse cx="32" cy="35" rx="8" ry="9"/><ellipse cx="16" cy="35" rx="8" ry="9"/><ellipse cx="12" cy="21" rx="10" ry="7"/></g><circle cx="24" cy="24" r="5.5" fill="#ffc93d"/></svg></span>
+
+  <!-- Bows -->
+  <span class="deco a-drift2" style="left:10%;top:53%;width:28px;height:20px;color:#fff;opacity:.9"><svg viewBox="0 0 48 32" fill="currentColor"><path d="M24 16C18 6 8 2 4 7c-3.4 4.2 1 12 8 11l12-2zm0 0c6-10 16-14 20-9 3.4 4.2-1 12-8 11l-12-2z"/><circle cx="24" cy="16" r="4.6" fill="#ffd9ea"/><path d="M21 20l-3 10 6-4 6 4-3-10z" opacity=".75"/></svg></span>
+  <span class="deco a-drift1 m-hide" style="left:88%;top:52%;width:26px;height:19px;color:#ffe9f5;opacity:.9;animation-delay:-3.4s"><svg viewBox="0 0 48 32" fill="currentColor"><path d="M24 16C18 6 8 2 4 7c-3.4 4.2 1 12 8 11l12-2zm0 0c6-10 16-14 20-9 3.4 4.2-1 12-8 11l-12-2z"/><circle cx="24" cy="16" r="4.6" fill="#fff"/><path d="M21 20l-3 10 6-4 6 4-3-10z" opacity=".75"/></svg></span>
+  <span class="deco a-drift2 m-hide" style="left:29%;top:93%;width:22px;height:16px;color:#ffd9ea;opacity:.85;animation-delay:-1s"><svg viewBox="0 0 48 32" fill="currentColor"><path d="M24 16C18 6 8 2 4 7c-3.4 4.2 1 12 8 11l12-2zm0 0c6-10 16-14 20-9 3.4 4.2-1 12-8 11l-12-2z"/><circle cx="24" cy="16" r="4.6" fill="#fff"/></svg></span>
+
+  <!-- Sparkles (4-point) -->
+  <span class="deco a-twinkle" style="left:16%;top:24%;width:15px;height:15px;color:#fff;animation-delay:-.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle2" style="left:84%;top:27%;width:13px;height:13px;color:#e3d9ff;animation-delay:-2.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle" style="left:6%;top:60%;width:12px;height:12px;color:#fff3a6;animation-delay:-1.8s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle2 m-hide" style="left:92%;top:44%;width:14px;height:14px;color:#fff;animation-delay:-3.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle m-hide" style="left:36%;top:4%;width:11px;height:11px;color:#fff;animation-delay:-2.9s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle2" style="left:63%;top:3.5%;width:12px;height:12px;color:#ffd9ea;animation-delay:-.3s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle m-hide" style="left:48%;top:95%;width:12px;height:12px;color:#fff;animation-delay:-1.2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+  <span class="deco a-twinkle2 m-hide" style="left:68%;top:93%;width:10px;height:10px;color:#fff3a6;animation-delay:-4.1s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.8 6.5 2.6 9.8 12 12-9.4 2.2-11.2 5.5-12 12-.8-6.5-2.6-9.8-12-12C9.4 9.8 11.2 6.5 12 0z"/></svg></span>
+
+  <!-- Pearl dots -->
+  <span class="pearl" style="left:12%;top:42%;width:9px;height:9px"></span>
+  <span class="pearl m-hide" style="left:87%;top:15%;width:8px;height:8px"></span>
+  <span class="pearl" style="left:21%;top:76%;width:8px;height:8px"></span>
+  <span class="pearl m-hide" style="left:79%;top:72%;width:9px;height:9px"></span>
+  <span class="pearl m-hide" style="left:32%;top:14%;width:7px;height:7px"></span>
+  <span class="pearl" style="left:66%;top:12%;width:7px;height:7px"></span>
+  <span class="pearl m-hide" style="left:9%;top:92%;width:7px;height:7px"></span>
+  <span class="pearl" style="left:90%;top:90%;width:8px;height:8px"></span>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <span class="status"><i></i>正在求职中 · 预计 2026 年 12 月毕业</span>
+    <h1>王心滢 <span class="en">Xinying Wang</span></h1>
+    <p class="tagline">波士顿大学商业分析硕士在读 · 把消费者与市场研究，变成 <b>营销 / 内容 / 用户运营</b> 的下一步动作</p>
+    <p class="hint">↓ 点任意一个板块看具体信息 · 中间的人物可以按住拖动 ↓</p>
+  </header>
+
+  <!-- STAGE -->
+  <main class="stage">
+    <div class="col">
+      <button class="tile c1" type="button" data-open="panel-about" aria-haspopup="dialog">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+        <h2>个人简介<span class="en">ABOUT</span></h2>
+        <p>我是谁、在读什么、想做什么样的工作——还有我的教育背景，都在这里。</p>
+        <span class="go">点开看看 <span class="arr">→</span></span>
+      </button>
+      <button class="tile c2" type="button" data-open="panel-experience" aria-haspopup="dialog">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+        <h2>经历<span class="en">EXPERIENCE</span></h2>
+        <p>两段实习、两年公众号运营，还有四个课程项目（含 Airbnb 价格研究）。</p>
+        <span class="go">点开看看 <span class="arr">→</span></span>
+      </button>
+    </div>
+
+    <div class="avatar-box" id="avatarBox">
+      <div class="avatar-drag" id="avatarDrag" tabindex="0" role="img"
+           aria-label="王心滢的全身手绘插画分身：长直深棕发，花卉上衣配白色鱼尾裙和米色高跟鞋，戴印有 2026 字样的白色波士顿大学毕业绶带。可以按住拖动，也可以用方向键移动。"
+           aria-describedby="avatarHint">
+        <div class="avatar-glow" aria-hidden="true"></div>
+        <div class="avatar-tilt" id="avatarTilt">
+          <div class="avatar-float">
+            <figure class="avatar-figure">
+              <img src="assets/avatar-fullbody.webp" alt="" draggable="false" />
+            </figure>
+          </div>
+        </div>
+        <div class="avatar-shadow" id="avatarShadow" aria-hidden="true"></div>
+        <span class="drag-badge" aria-hidden="true">✥ 按住拖我</span>
+      </div>
+      <p class="avatar-hint" id="avatarHint">把鼠标移过来，我会跟着立体倾斜；按住可以把我拖到旁边，手机上用手指拖也行。</p>
+      <div class="avatar-controls">
+        <button type="button" id="tiltLeft">⟲ 向左转</button>
+        <button type="button" id="avatarReset">回正位置</button>
+        <button type="button" id="tiltRight">向右转 ⟳</button>
+      </div>
+    </div>
+
+    <div class="col">
+      <button class="tile c3" type="button" data-open="panel-skills" aria-haspopup="dialog">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.9 6.3.5-4.7 4.2 1.4 6.2L12 15.7 6.6 18.8 8 12.6 3.3 8.4l6.3-.5z"/></svg></span>
+        <h2>技能<span class="en">SKILLS</span></h2>
+        <p>SQL、Python、Tableau、Excel，加上营销策划、内容运营和 AI 工具。</p>
+        <span class="go">点开看看 <span class="arr">→</span></span>
+      </button>
+      <button class="tile c4" type="button" data-open="panel-contact" aria-haspopup="dialog">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z" opacity="0"/><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+        <h2>联系方式<span class="en">CONTACT</span></h2>
+        <p>邮箱、手机、LinkedIn 和 GitHub——有岗位机会，欢迎直接联系我。</p>
+        <span class="go">点开看看 <span class="arr">→</span></span>
+      </button>
+    </div>
+  </main>
+
+  <footer>王心滢 Xinying Wang · <b>Boston, MA</b> · 营销 · 内容 · 用户运营</footer>
+</div>
+
+<!-- PANEL: ABOUT -->
+<div class="sheet" id="panel-about" role="dialog" aria-modal="true" aria-labelledby="t-about" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="ic" style="background:#ffe3f0;color:var(--pink-deep)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+      <h2 id="t-about">个人简介 <span class="en">ABOUT ME</span></h2>
+      <button class="close-x" type="button" data-close aria-label="关闭">✕</button>
+    </div>
+    <p>我从高中起就在美国就读，长期使用英语学习和沟通，本科读市场营销，现在在波士顿大学攻读商业分析硕士。我的兴趣一直在同一条线上：<strong>先理解消费者和市场，再做营销动作</strong>。市场营销的训练让我关注品牌、渠道与用户心理，商业分析的训练补上了 SQL、Python 和建模工具，让我能用数据验证判断、而不是只凭感觉。</p>
+    <p>求职方向上，我希望做以研究和分析为基础的<strong>营销、内容或用户运营</strong>工作——比如消费者洞察、市场与渠道分析、内容策划、用户运营策略——把研究结论变成团队能直接执行的建议，而不是只交报表的纯数据分析。</p>
+    <h3 class="sub">基本信息</h3>
+    <div class="fact"><span>现居</span><b>美国 · 波士顿</b></div>
+    <div class="fact"><span>学校</span><b>Boston University</b></div>
+    <div class="fact"><span>专业</span><b>商业分析硕士（在读）</b></div>
+    <div class="fact"><span>本科</span><b>市场营销</b></div>
+    <div class="fact"><span>语言</span><b>托福 104 · 英语长期学习与沟通</b></div>
+    <div class="fact"><span>求职方向</span><b>营销 / 内容 / 用户运营</b></div>
+    <h3 class="sub">教育背景</h3>
+    <div class="item">
+      <div class="when">硕士 · 在读 · 2025 年 8 月 — 2026 年 12 月（预计毕业）</div>
+      <h4>波士顿大学 Boston University <span class="org">· 商业分析硕士（MS in Business Analytics）</span></h4>
+      <p>课程训练涵盖数据分析、统计建模与商业决策，包括使用近 4.9 万条真实房源数据做价格预测建模、设计并执行消费者行为实验等课程项目（详见「经历」板块）。</p>
+    </div>
+    <div class="item">
+      <div class="when">本科 · 2021 年 8 月 — 2025 年 5 月</div>
+      <h4>市场营销 <span class="org">· 学士学位</span></h4>
+      <p>系统学习市场营销、消费者行为与渠道管理；在校期间完成三星渠道分析、康师傅美国市场进入策略等课程项目，并担任项目组长。托福 104 分。</p>
+    </div>
+    <button class="back-btn" type="button" data-close>← 返回主页</button>
+  </div>
+</div>
+
+<!-- PANEL: EXPERIENCE -->
+<div class="sheet" id="panel-experience" role="dialog" aria-modal="true" aria-labelledby="t-exp" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="ic" style="background:#e2f4f2;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+      <h2 id="t-exp">经历 <span class="en">EXPERIENCE &amp; PROJECTS</span></h2>
+      <button class="close-x" type="button" data-close aria-label="关闭">✕</button>
+    </div>
+
+    <h3 class="sub">实习经历</h3>
+    <div class="item">
+      <div class="when">2024 年 5 月 — 8 月</div>
+      <h4>信贷分析实习 <span class="org">· 中国银行相关业务</span></h4>
+      <ul>
+        <li>参与信贷业务相关的数据整理与分析工作，接触企业客户资料与信贷审核流程。</li>
+        <li>在真实金融机构的工作环境中，训练了对数据准确性和流程规范的要求。</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="when">2023 年 5 月 — 8 月</div>
+      <h4>市场实习 <span class="org">· 山西远大</span></h4>
+      <ul>
+        <li>参与市场相关日常工作，接触市场信息收集、整理与基础分析。</li>
+        <li>这段经历让我第一次把课堂上的营销框架用到真实业务场景里。</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">校园经历 · 内容运营</h3>
+    <div class="item">
+      <div class="when">约两年</div>
+      <h4>公众号运营 <span class="org">· UNL CSA（中国学生学者联谊会）</span><span class="tag">内容运营</span></h4>
+      <ul>
+        <li>运营公众号约两年，累计发布约 15 篇文章，负责选题、排版、新生攻略和活动公告等内容。</li>
+        <li>2024 年春节晚会推文由我负责选题策划、排版与插画设计。</li>
+        <li>面向在美中国留学生读者写作，熟悉从选题、成稿到排版发布的完整内容流程。</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">项目经历（以下均为课程项目）</h3>
+    <div class="item">
+      <div class="when">2025 年 10 月 — 12 月 · 课程项目</div>
+      <h4>Airbnb 纽约民宿价格研究</h4>
+      <p>使用 48,895 条纽约历史房源记录，比较 7 类价格预测模型的表现，分析哪些房源特征真正影响定价。<br><strong>我的角色：</strong>数据分析与建模比较 · <strong>工具：</strong>Python</p>
+    </div>
+    <div class="item">
+      <div class="when">2026 年 1 月 — 3 月 · 课程项目</div>
+      <h4>电商「仅剩 1 件」库存提示研究</h4>
+      <p>研究商品页「仅剩 1 件」提示是否会影响消费者购买决策。负责实验设计与问卷设计，覆盖耳机、鞋、水瓶三个品类，共回收 74 份问卷；分析结论为未发现统计显著效果——如实报告阴性结果，也是研究的一部分。<br><strong>我的角色：</strong>实验设计、问卷设计 · <strong>方法：</strong>A/B 实验思维、问卷调研</p>
+    </div>
+    <div class="item">
+      <div class="when">2024 年 8 月 — 12 月 · 课程项目</div>
+      <h4>康师傅美国市场进入策略</h4>
+      <p>为康师傅进入美国市场制定策略：由我提出选题，参与品牌比较分析，并围绕产品、价格、渠道、推广制定 4P 营销策略。<br><strong>我的角色：</strong>选题提出、品牌比较、4P 策略 · <strong>视角：</strong>中国品牌出海</p>
+    </div>
+    <div class="item">
+      <div class="when">2024 年 1 月 — 5 月 · 课程项目</div>
+      <h4>三星渠道分析</h4>
+      <p>担任组长，研究三星在直营、零售、电商与第三方渠道的布局与差异，负责团队分工与最终成果整合。<br><strong>我的角色：</strong>组长（分工与成果整合） · <strong>主题：</strong>渠道策略</p>
+    </div>
+    <div class="note"><b>作品集：</b>另备有一份 7 页中文作品集，汇总营销与消费者研究相关项目，如需查阅，欢迎通过「联系方式」板块向我索取。</div>
+    <button class="back-btn" type="button" data-close>← 返回主页</button>
+  </div>
+</div>
+
+<!-- PANEL: SKILLS -->
+<div class="sheet" id="panel-skills" role="dialog" aria-modal="true" aria-labelledby="t-skills" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="ic" style="background:#fff3cf;color:#a86e00"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.9 6.3.5-4.7 4.2 1.4 6.2L12 15.7 6.6 18.8 8 12.6 3.3 8.4l6.3-.5z"/></svg></span>
+      <h2 id="t-skills">技能 <span class="en">SKILLS</span></h2>
+      <button class="close-x" type="button" data-close aria-label="关闭">✕</button>
+    </div>
+    <div class="skill-block">
+      <h4>数据分析</h4>
+      <p>能独立用 Excel 做回归分析、用 Tableau 完成数据可视化；Python 方面了解数据清洗、作图，以及 A/B test、segmentation、cluster 等常用分析方法。</p>
+      <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Tableau</span><span class="chip">Excel</span></div>
+    </div>
+    <div class="skill-block">
+      <h4>营销与内容</h4>
+      <p>市场与渠道分析、品牌比较、4P 策略、消费者调研与问卷/实验设计；有约两年的公众号选题、写作与排版运营经验。</p>
+      <div class="chips"><span class="chip">消费者研究</span><span class="chip">内容策划</span><span class="chip">问卷与实验设计</span><span class="chip">Canva</span></div>
+    </div>
+    <div class="skill-block">
+      <h4>工具与语言</h4>
+      <p>熟练使用 Google Workspace 协作办公；日常使用 ChatGPT / Codex 等 AI 工具辅助研究、写作与分析。英语可作为工作语言（托福 104）。</p>
+      <div class="chips"><span class="chip">Google Workspace</span><span class="chip">ChatGPT / Codex</span><span class="chip">英语 · 托福 104</span></div>
+    </div>
+    <button class="back-btn" type="button" data-close>← 返回主页</button>
+  </div>
+</div>
+
+<!-- PANEL: CONTACT -->
+<div class="sheet" id="panel-contact" role="dialog" aria-modal="true" aria-labelledby="t-contact" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="ic" style="background:#ffe9d6;color:#c2570a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+      <h2 id="t-contact">联系方式 <span class="en">CONTACT</span></h2>
+      <button class="close-x" type="button" data-close aria-label="关闭">✕</button>
+    </div>
+    <p>如果你有营销、内容、用户运营或消费者研究相关的岗位机会，或想进一步了解我的项目和作品集，欢迎通过以下任一方式联系我，我会尽快回复。</p>
+    <div class="contact-list">
+      <a class="contact-item" href="mailto:xinying2003120@163.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <span style="min-width:0"><span class="lab">邮箱 EMAIL</span><br><span class="val">xinying2003120@163.com</span></span>
+        <button class="copy-btn" data-copy="xinying2003120@163.com" type="button">复制</button>
+      </a>
+      <a class="contact-item" href="tel:+14025217580">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span style="min-width:0"><span class="lab">手机 PHONE（美国）</span><br><span class="val">+1 (402) 521-7580</span></span>
+        <button class="copy-btn" data-copy="+14025217580" type="button">复制</button>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/xinying-wang-327282381" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>
+        <span style="min-width:0"><span class="lab">LINKEDIN</span><br><span class="val">linkedin.com/in/xinying-wang-327282381</span></span>
+        <span class="open-tag">打开 ↗</span>
+      </a>
+      <a class="contact-item" href="https://github.com/cwang56-star" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+        <span style="min-width:0"><span class="lab">GITHUB</span><br><span class="val">github.com/cwang56-star</span></span>
+        <span class="open-tag">打开 ↗</span>
+      </a>
+    </div>
+    <button class="back-btn" type="button" data-close>← 返回主页</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status">已复制</div>
+
+<script>
+/* Full-body avatar: 3D perspective tilt + drag + idle float.
+   Transforms are layered — drag layer moves, tilt layer rotates, float layer bobs —
+   so the three motions never overwrite each other. */
+(function(){
+  var box    = document.getElementById('avatarBox');
+  var dragEl = document.getElementById('avatarDrag');
+  var tiltEl = document.getElementById('avatarTilt');
+  var shadow = document.getElementById('avatarShadow');
+  var stage  = document.querySelector('.stage');
+  if (!box || !dragEl || !tiltEl || !stage) return;
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var posX = 0, posY = 0;            // drag position (kept on release)
+  var curRX = 0, curRY = 0;          // current tilt
+  var tgtRX = 0, tgtRY = 0;          // tilt target
+  var manual = false;                // tilt set by the on-screen turn buttons
+  var dragging = false;
+
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+  function maxDragX(){ return Math.min(84, box.offsetWidth * 0.34); }
+  function maxDragY(){ return 46; }
+
+  function applyDrag(withSettle){
+    dragEl.style.transition = withSettle ? 'transform .5s cubic-bezier(.22,1.4,.36,1)' : 'none';
+    dragEl.style.transform = 'translate3d(' + posX + 'px,' + posY + 'px,0)';
+  }
+  function resetAvatar(){
+    posX = 0; posY = 0; manual = true; tgtRX = 0; tgtRY = 0;
+    applyDrag(true);
+    setTimeout(function(){ manual = false; }, 60);
+  }
+
+  /* --- smooth tilt loop --- */
+  function frame(){
+    curRX += (tgtRX - curRX) * 0.09;
+    curRY += (tgtRY - curRY) * 0.09;
+    if (Math.abs(curRX) < 0.01 && Math.abs(tgtRX) < 0.01) curRX = 0;
+    if (Math.abs(curRY) < 0.01 && Math.abs(tgtRY) < 0.01) curRY = 0;
+    tiltEl.style.transform = 'rotateX(' + curRX.toFixed(2) + 'deg) rotateY(' + curRY.toFixed(2) + 'deg)';
+    if (shadow){
+      var lift = dragging ? 1.22 : 1;
+      var sx = (1 - Math.min(Math.abs(curRY) * 0.008, 0.14)) * lift;
+      shadow.style.transform = 'translateX(calc(-50% + ' + (-curRY * 1.15).toFixed(1) + 'px)) scaleX(' + sx.toFixed(3) + ')';
+      shadow.style.opacity = dragging ? '.7' : '';
+    }
+    requestAnimationFrame(frame);
+  }
+  if (!reduced) requestAnimationFrame(frame);
+
+  /* --- tilt follows the pointer over the stage (mouse / pen) --- */
+  stage.addEventListener('pointermove', function(e){
+    if (reduced || dragging || manual) return;
+    if (e.pointerType === 'touch') return;
+    var r = box.getBoundingClientRect();
+    var nx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+    var ny = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+    tgtRY = clamp(nx, -1.4, 1.4) * 13;
+    tgtRX = clamp(-ny, -1.4, 1.4) * 9;
+  });
+  stage.addEventListener('pointerleave', function(){
+    if (!manual && !dragging){ tgtRX = 0; tgtRY = 0; }
+  });
+
+  /* --- drag the figure (mouse + touch via Pointer Events) --- */
+  var startX = 0, startY = 0, baseX = 0, baseY = 0, activeId = null;
+  dragEl.addEventListener('pointerdown', function(e){
+    if (e.button !== undefined && e.button !== 0) return;
+    activeId = e.pointerId;
+    try { dragEl.setPointerCapture(activeId); } catch(err){}
+    dragging = true; manual = false;
+    dragEl.classList.add('is-dragging');
+    dragEl.style.transition = 'none';
+    startX = e.clientX; startY = e.clientY; baseX = posX; baseY = posY;
+    e.preventDefault();
+  });
+  dragEl.addEventListener('pointermove', function(e){
+    if (!dragging || e.pointerId !== activeId) return;
+    posX = clamp(baseX + (e.clientX - startX), -maxDragX(), maxDragX());
+    posY = clamp(baseY + (e.clientY - startY), -maxDragY(), maxDragY());
+    applyDrag(false);
+    if (!reduced){
+      tgtRY = clamp((e.clientX - startX) * 0.09, -11, 11);
+      tgtRX = clamp(-(e.clientY - startY) * 0.05, -7, 7);
+    }
+  });
+  function endDrag(e){
+    if (!dragging || (e && e.pointerId !== activeId)) return;
+    dragging = false; activeId = null;
+    dragEl.classList.remove('is-dragging');
+    tgtRX = 0; tgtRY = 0;               // settle upright, keep the dropped position
+  }
+  dragEl.addEventListener('pointerup', endDrag);
+  dragEl.addEventListener('pointercancel', endDrag);
+  dragEl.addEventListener('dblclick', resetAvatar);
+
+  /* --- keyboard: arrows move her, 0 / Home brings her back --- */
+  dragEl.addEventListener('keydown', function(e){
+    var step = e.shiftKey ? 26 : 11, used = true;
+    if (e.key === 'ArrowLeft')  posX = clamp(posX - step, -maxDragX(), maxDragX());
+    else if (e.key === 'ArrowRight') posX = clamp(posX + step, -maxDragX(), maxDragX());
+    else if (e.key === 'ArrowUp')    posY = clamp(posY - step, -maxDragY(), maxDragY());
+    else if (e.key === 'ArrowDown')  posY = clamp(posY + step, -maxDragY(), maxDragY());
+    else if (e.key === '0' || e.key === 'Home') resetAvatar();
+    else used = false;
+    if (used){ applyDrag(false); e.preventDefault(); }
+  });
+
+  /* --- on-screen turn / reset buttons (also the touch-friendly way to tilt) --- */
+  function setManual(rx, ry){
+    manual = true; tgtRX = rx; tgtRY = ry;
+    if (reduced){ tiltEl.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)'; }
+  }
+  var bL = document.getElementById('tiltLeft');
+  var bR = document.getElementById('tiltRight');
+  var bC = document.getElementById('avatarReset');
+  if (bL) bL.addEventListener('click', function(){ setManual(3, -16); });
+  if (bR) bR.addEventListener('click', function(){ setManual(3, 16); });
+  if (bC) bC.addEventListener('click', resetAvatar);
+})();
+</script>
+
+<script>
+(function(){
+  var lastFocus = null;
+  function openSheet(id){
+    var s = document.getElementById(id);
+    if (!s) return;
+    lastFocus = document.activeElement;
+    s.hidden = false;
+    // force reflow so .open transition/animation applies
+    void s.offsetWidth;
+    s.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    var panel = s.querySelector('.panel');
+    if (panel) panel.scrollTop = 0;
+    var x = s.querySelector('.close-x');
+    if (x) x.focus();
+  }
+  function closeSheet(s){
+    s.classList.remove('open');
+    s.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-open]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openSheet(btn.getAttribute('data-open')); });
+  });
+  document.querySelectorAll('.sheet').forEach(function(s){
+    s.querySelectorAll('[data-close]').forEach(function(el){
+      el.addEventListener('click', function(){ closeSheet(s); });
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.sheet.open').forEach(closeSheet);
+    }
+  });
+  // Copy buttons
+  var toast = document.getElementById('toast');
+  var timer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var text = btn.getAttribute('data-copy');
+      function done(){ showToast('已复制：' + text); }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(err){ showToast(text); }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
